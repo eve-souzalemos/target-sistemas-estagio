@@ -1,0 +1,22 @@
+package target.sistemas;
+import java.util.Scanner;
+public class Fibonacci {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("Digite o ponto final de sequência de Fibonacci");
+
+        int limiteFibonacci = entrada.nextInt();
+        int fibonacci1 = 0;
+        int fibonacci2 = 1;
+        int fibonacci = 0;
+        String s = "";
+        for (int i = 1; i < limiteFibonacci; i++) {
+            s = s + fibonacci + ", ";
+            fibonacci = fibonacci1 + fibonacci2;
+            fibonacci2 = fibonacci1;
+            fibonacci1 = fibonacci;
+        }
+        System.out.println(s + fibonacci);
+    }
+}
